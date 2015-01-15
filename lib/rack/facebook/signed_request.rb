@@ -114,6 +114,9 @@ module Rack
                       #{"channelUrl : '#{@options[:channel_url]}', // add channelURL to avoid IE redirect problems" if @options[:channel_url]}
                       xfbml  : #{@options[:xfbml] || true}  // parse XFBML
                     });
+                    if (typeof(window.FBINIT)=="function"){
+                       FBINIT();
+                    }
                   };
 
                   (function() {
